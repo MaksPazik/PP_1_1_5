@@ -3,6 +3,8 @@ package jm.task.core.jdbc;
 import jm.task.core.jdbc.service.UserServiceImpl;
 import jm.task.core.jdbc.util.Util;
 
+import java.sql.SQLException;
+
 import static jm.task.core.jdbc.util.Util.closeConnection;
 import static jm.task.core.jdbc.util.Util.getConnection;
 
@@ -10,7 +12,7 @@ import static jm.task.core.jdbc.util.Util.getConnection;
 public class Main {
     static UserServiceImpl userService = new UserServiceImpl();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         Util util = new Util();
         util.getConnection();
