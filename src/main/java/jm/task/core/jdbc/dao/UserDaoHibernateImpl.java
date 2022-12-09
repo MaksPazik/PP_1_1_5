@@ -32,11 +32,8 @@ public class UserDaoHibernateImpl implements UserDao {
             query = session.createSQLQuery(sqlCommand);
             query.executeUpdate();
             session.getTransaction().commit();
-        } catch (HibernateException ex){
-            try {
-                transaction.rollback();
-            } catch (RuntimeException re){
-            }
+        } catch (HibernateException ex) {
+            transaction.rollback();
             throw ex;
         } finally {
             if (session != null) {
@@ -54,11 +51,8 @@ public class UserDaoHibernateImpl implements UserDao {
             query = session.createSQLQuery(sqlCommand);
             query.executeUpdate();
             session.getTransaction().commit();
-        } catch (HibernateException ex){
-            try {
-                transaction.rollback();
-            } catch (RuntimeException re){
-            }
+        } catch (HibernateException ex) {
+            transaction.rollback();
             throw ex;
         } finally {
             if (session != null) {
@@ -81,11 +75,8 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
             System.out.println("User с именем – " + name + " добавлен в базу данных." );
             System.out.println("____________________________________");
-        } catch (HibernateException ex){
-            try {
-                transaction.rollback();
-            } catch (RuntimeException re){
-            }
+        } catch (HibernateException ex) {
+            transaction.rollback();
             throw ex;
         } finally {
             if (session != null) {
@@ -104,11 +95,8 @@ public class UserDaoHibernateImpl implements UserDao {
             query = session.createSQLQuery(sqlCommand);
             query.setParameter(1, id).executeUpdate();
             session.getTransaction().commit();
-        } catch (HibernateException ex){
-            try {
-                transaction.rollback();
-            } catch (RuntimeException re){
-            }
+        } catch (HibernateException ex) {
+            transaction.rollback();
             throw ex;
         } finally {
             if (session != null) {
@@ -127,11 +115,8 @@ public class UserDaoHibernateImpl implements UserDao {
             users = session.createQuery(sqlCommand, User.class).getResultList();
             System.out.println(users);
             session.getTransaction().commit();
-        } catch (HibernateException ex){
-            try {
-                transaction.rollback();
-            } catch (RuntimeException re){
-            }
+        } catch (HibernateException ex) {
+            transaction.rollback();
             throw ex;
         } finally {
             if (session != null) {
@@ -150,11 +135,8 @@ public class UserDaoHibernateImpl implements UserDao {
             query = session.createSQLQuery(sqlCommand);
             query.executeUpdate();
             session.getTransaction().commit();
-        } catch (HibernateException ex){
-            try {
-                transaction.rollback();
-            } catch (RuntimeException re){
-            }
+        } catch (HibernateException ex) {
+            transaction.rollback();
             throw ex;
         } finally {
             if (session != null) {
